@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Guest\PageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,11 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/',[PageController::class, 'index'])->name('home');
 
-Route::get('/nuova-pagina', function () {
-    return view('nuova-pagina');
-})->name('nuova-pagina');
+Route::get('/nuova-pagina', [PageController::class, 'nuovaPagina'])->name('nuova-pagina');
+
+
 

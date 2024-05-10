@@ -2,44 +2,35 @@
 
 @section('content')
 
-<div class=" container  my-5 ">
+<div class=" container  my-5  flex-wrap">
     <h1>i miei film </h1>
    <p>
-      i film.....
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">title</th>
-            <th scope="col">original_title</th>
-            <th scope="col">nationality</th>
-            <th scope="col">date</th>
-            <th scope="col">vote</th>
+       i film.....
+    </p>
 
-
-          </tr>
-        </thead>
-        <tbody>
             @foreach ($movies as $movie)
 
-            <tr>
-
-              <td> {{ $movie->id }} </td>
-              <td> {{ $movie->title }} </td>
-              <td> {{ $movie->original_title }} </td>
-              <td> {{ $movie->date }} </td>
-              <td> {{ $movie->vote }} </td>
 
 
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{ $movie->id }}</h5>
+                  <h5 class="card-title">{{ $movie->title }}</h5>
+                  <h5 class="card-title">{{ $movie->original_title }}</h5>
 
-            </tr>
+                  <p class="card-text">{{ $movie->nationality }}</p>
+                  <p class="card-text">{{ $movie->date }}</p>
+                  <p class="card-text">{{ $movie->vote }}</p>
+
+
+
+                </div>
+              </div>
 
             @endforeach
 
 
-        </tbody>
-      </table>
-   </p>
+
 
 
 </div>
